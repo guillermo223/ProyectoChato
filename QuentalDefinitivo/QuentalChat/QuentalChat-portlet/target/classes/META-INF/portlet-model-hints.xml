@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.proyecto.quental.chat.model.Asignacion">
+		<field name="asignacionId" type="long" />
+		<field name="userId" type="long" />
+		<field name="conversacionId" type="long" />
+	</model>
+	<model name="com.proyecto.quental.chat.model.Conversacion">
+		<field name="conversacionId" type="long" />
+		<field name="nickName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="finDate" type="Date" />
+		<field name="categoria" type="String" />
+		<field name="descripcion" type="String" />
+		<field name="etiquetas" type="String" />
+		<field name="asignado" type="boolean" />
+		<field name="cerrada" type="boolean" />
+	</model>
+	<model name="com.proyecto.quental.chat.model.Mensaje">
+		<field name="mensajeId" type="long" />
+		<field name="autor" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="contenido" type="String" />
+		<field name="conversacionId" type="long" />
+	</model>
+</model-hints>

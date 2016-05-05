@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.proyecto.quental.chat.model.Asignacion" />
+	<import class="com.proyecto.quental.chat.model.Conversacion" />
+	<import class="com.proyecto.quental.chat.model.Mensaje" />
+	<class name="com.proyecto.quental.chat.model.impl.AsignacionImpl" table="Asignacion">
+		<cache usage="read-write" />
+		<id name="asignacionId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="conversacionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.proyecto.quental.chat.model.impl.ConversacionImpl" table="Conversacion">
+		<cache usage="read-write" />
+		<id name="conversacionId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="nickName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="finDate" type="org.hibernate.type.TimestampType" />
+		<property name="categoria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="descripcion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="etiquetas" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="asignado" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="cerrada" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.proyecto.quental.chat.model.impl.MensajeImpl" table="Mensaje">
+		<cache usage="read-write" />
+		<id name="mensajeId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="autor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="contenido" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="conversacionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

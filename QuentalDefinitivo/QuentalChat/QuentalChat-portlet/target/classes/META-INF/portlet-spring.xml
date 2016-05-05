@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.proyecto.quental.chat.service.AsignacionLocalService" class="com.proyecto.quental.chat.service.impl.AsignacionLocalServiceImpl" />
+	<bean id="com.proyecto.quental.chat.service.AsignacionService" class="com.proyecto.quental.chat.service.impl.AsignacionServiceImpl" />
+	<bean id="com.proyecto.quental.chat.service.persistence.AsignacionPersistence" class="com.proyecto.quental.chat.service.persistence.AsignacionPersistenceImpl" parent="basePersistence" />
+	<bean id="com.proyecto.quental.chat.service.ConversacionLocalService" class="com.proyecto.quental.chat.service.impl.ConversacionLocalServiceImpl" />
+	<bean id="com.proyecto.quental.chat.service.ConversacionService" class="com.proyecto.quental.chat.service.impl.ConversacionServiceImpl" />
+	<bean id="com.proyecto.quental.chat.service.persistence.ConversacionPersistence" class="com.proyecto.quental.chat.service.persistence.ConversacionPersistenceImpl" parent="basePersistence" />
+	<bean id="com.proyecto.quental.chat.service.MensajeLocalService" class="com.proyecto.quental.chat.service.impl.MensajeLocalServiceImpl" />
+	<bean id="com.proyecto.quental.chat.service.MensajeService" class="com.proyecto.quental.chat.service.impl.MensajeServiceImpl" />
+	<bean id="com.proyecto.quental.chat.service.persistence.MensajePersistence" class="com.proyecto.quental.chat.service.persistence.MensajePersistenceImpl" parent="basePersistence" />
+</beans>

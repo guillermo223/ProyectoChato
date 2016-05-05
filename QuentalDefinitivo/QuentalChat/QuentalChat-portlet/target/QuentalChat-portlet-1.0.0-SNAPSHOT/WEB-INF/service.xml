@@ -1,0 +1,71 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.proyecto.quental.chat">
+	<namespace>QuentalChat</namespace>
+	<entity name="Conversacion" local-service="true" table="Conversacion" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="conversacionId" type="long" primary="true" id-type="increment"></column>
+
+		<!-- Group instance -->
+
+		<!-- Audit fields -->
+		<column name="nickName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="finDate" type="Date"></column>
+        <column name="categoria" type="String"></column>
+        <column name="descripcion" type="String"></column>
+        <column name="etiquetas" type="String"></column>
+        <column name="asignado" type="boolean"></column>
+        <column name="cerrada" type="boolean"></column>
+        <finder name="Pendientes" return-type="Collection">
+            <finder-column name="asignado"></finder-column>
+        </finder>
+        <finder name="Cerradas" return-type="Collection">
+            <finder-column name="cerrada"></finder-column>
+        </finder>
+	</entity>
+	<entity name="Mensaje" local-service="true" table="Mensaje" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="mensajeId" type="long" primary="true" id-type="increment"></column>
+
+		<!-- Group instance -->
+
+		<!-- Audit fields -->
+		<column name="autor" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="contenido" type="String"></column>
+        <column name="conversacionId" type="long"></column>
+        <finder name="Conversacion" return-type="Collection">
+            <finder-column name="conversacionId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="Asignacion" local-service="true" table="Asignacion" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<!-- Group instance -->
+
+		<!-- Audit fields -->
+
+
+		<!-- PK fields -->
+
+		<column name="asignacionId" type="long" primary="true" id-type="increment"></column>
+
+		<!-- Group instance -->
+
+		<!-- Audit fields -->
+		<column name="userId" type="long"></column>
+        <column name="conversacionId" type="long"></column>
+        <finder name="Conversacion" return-type="Collection">
+            <finder-column name="conversacionId"></finder-column>
+        </finder>
+        <finder name="Tecnico" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

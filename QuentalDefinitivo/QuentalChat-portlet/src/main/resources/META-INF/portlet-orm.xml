@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.proyecto.quental.chat.model.impl.AsignacionModelImpl">
+		<attributes>
+			<id name="asignacionId" />
+			<basic name="userId" />
+			<basic name="conversacionId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.proyecto.quental.chat.model.impl.ConversacionModelImpl">
+		<attributes>
+			<id name="conversacionId" />
+			<basic name="nickName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="finDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="categoria" />
+			<basic name="descripcion" />
+			<basic name="etiquetas" />
+			<basic name="asignado" />
+			<basic name="cerrada" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.proyecto.quental.chat.model.impl.MensajeModelImpl">
+		<attributes>
+			<id name="mensajeId" />
+			<basic name="autor" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="contenido" />
+			<basic name="conversacionId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.proyecto.quental.chat.model.impl.AsignacionImpl" name="Asignacion">
+		<table name="Asignacion" />
+		<attributes />
+	</entity>
+	<entity class="com.proyecto.quental.chat.model.impl.ConversacionImpl" name="Conversacion">
+		<table name="Conversacion" />
+		<attributes />
+	</entity>
+	<entity class="com.proyecto.quental.chat.model.impl.MensajeImpl" name="Mensaje">
+		<table name="Mensaje" />
+		<attributes />
+	</entity>
+</entity-mappings>
